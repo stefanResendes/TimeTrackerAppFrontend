@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Text, View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
 
     /* const LogStuff = (firstName, lastName, email, clockIn, clockOut) => {
         console.log(firstName + ' ' + lastName + ' ' + email);
@@ -22,33 +22,9 @@ const HomeScreen = () => {
         console.log(diffHours + ':' + diffMins);
     } */
 
-    /* const ClockIn = () => {
-        var date = new Date().getDate();
-        var month = new Date().getMonth() + 1;
-        var year = new Date().getFullYear();
-        var hours = new Date().getHours();
-        var min = new Date().getMinutes();
-        var sec = new Date().getSeconds();
-
-        setClockIn(hours+':'+min+':'+sec);
-    }
-
-    const ClockOut = () => {
-        var date = new Date().getDate();
-        var month = new Date().getMonth() + 1;
-        var year = new Date().getFullYear();
-        var hours = new Date().getHours();
-        var min = new Date().getMinutes();
-        var sec = new Date().getSeconds();
-
-        setClockOut(hours+':'+min+':'+sec);
-    } */
-
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
-    /* const [clockIn, setClockIn] = useState('');
-    const [clockOut, setClockOut] = useState(''); */
 
     return (
         <View style={styles.container}>
@@ -70,24 +46,12 @@ const HomeScreen = () => {
                 onChangeText = {emailAddress => setEmailAddress(emailAddress)}
                 defaultValue = {emailAddress}
             />
-            {/* <TouchableOpacity
-                onPress = {
-                    () => LogStuff(firstName, lastName, emailAddress, clockIn, clockOut)
-            }>
-                <Text>Log It</Text>
-            </TouchableOpacity> */}
-            {/* <TouchableOpacity
-                onPress = {
-                    () => ClockIn()
-            }>
-                <Text>Clock In</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress = {
-                    () => ClockOut()
-            }>
-                <Text>Clock Out</Text>
-            </TouchableOpacity> */}
+            <Button
+                title="Log In"
+                onPress = {() =>
+                    navigation.navigate('Clock', { fname: firstName, lname: lastName, email: emailAddress })
+                }
+            />
         </View>
     );
 }
