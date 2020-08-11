@@ -1,0 +1,12 @@
+{
+  "name": "TimeTrackerApp",
+  "displayName": "TimeTrackerApp",
+  "expo": {
+    "name": "TimeTrackerApp",
+    "slug": "TimeTrackerApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
