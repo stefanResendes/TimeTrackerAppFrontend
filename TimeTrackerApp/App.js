@@ -4,10 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from './Home.js';
 import ClockScreen from './ClockInOut.js';
+import SummaryScreen from './Summary.js';
 
 const Stack = createStackNavigator();
 
-const MyStack = () => {
+const AppStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -17,22 +18,10 @@ const MyStack = () => {
           options={{ title: 'Welcome' }}
         />
         <Stack.Screen name = "Clock" component={ClockScreen}/>
+        <Stack.Screen name = "Summary" component={SummaryScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-export default MyStack;
-
-/* export default function App() {
-
-  const Stack = createStackNavigator();
-
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-} */
+export default AppStack;

@@ -3,25 +3,6 @@ import { Button, Text, View, TextInput, StyleSheet, TouchableOpacity } from 'rea
 
 const HomeScreen = ({ navigation }) => {
 
-    /* const LogStuff = (firstName, lastName, email, clockIn, clockOut) => {
-        console.log(firstName + ' ' + lastName + ' ' + email);
-        console.log(clockIn);
-        console.log(clockOut);
-
-        var start = clockIn.split(':');
-        var end = clockOut.split(':');
-
-        var startDate = new Date(0, 0, 0, start[0], start[1], start[2]);
-        var endDate = new Date(0, 0, 0, end[0], end[1], end[2]);
-
-        var diff = endDate.getTime() - startDate.getTime();
-        var diffHours = Math.floor(diff / 1000 / 60 / 60);
-        diff -= diffHours * 1000 * 60 * 60;
-        var diffMins = Math.floor(diff / 1000 / 60);
-
-        console.log(diffHours + ':' + diffMins);
-    } */
-
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
